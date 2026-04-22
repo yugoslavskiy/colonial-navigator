@@ -18,6 +18,21 @@
                         ]
                     }
                 ]
+            },
+            {
+                "name": "Custom Data v18",
+                "version": "18",
+                "domains":
+                [
+                    {
+                        "name": "russia-colonialism",
+                        "identifier": "russia-colonialism",
+                        "data":
+                        [
+                            "https://yugoslavskiy.github.io/stix/russia-colonialism.json"
+                        ]
+                    }
+                ]
             }
         ]
     },
