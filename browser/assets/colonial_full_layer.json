@@ -1,0 +1,645 @@
+{
+    "name": "COLONIAL FRAMEWORK Base Layer",
+    "versions":
+    {
+        "attack": "14",
+        "navigator": "4.9.1",
+        "layer": "4.5"
+    },
+    "domain": "russia-colonialism",
+    "showTacticRowBackground": true,
+    "tacticRowBackground": "#dddddd",
+    "selectTechniquesAcrossTactics": false,
+    "selectSubtechniquesWithParent": false,
+    "layout":
+    {
+        "layout": "flat",
+        "showName": true,
+        "showID": false
+    },
+    "filters":
+    {
+        "platforms":
+        [
+            "Украина",
+            "Ичкерия"
+        ]
+    },
+    "techniques":
+    [
+        {
+            "techniqueID": "T0001",
+            "tactics":
+            [
+                "legitimization"
+            ]
+        },
+        {
+            "techniqueID": "T0002",
+            "tactics":
+            [
+                "legitimization"
+            ]
+        },
+        {
+            "techniqueID": "T0003",
+            "tactics":
+            [
+                "legitimization"
+            ]
+        },
+        {
+            "techniqueID": "T0004",
+            "tactics":
+            [
+                "legitimization"
+            ]
+        },
+        {
+            "techniqueID": "T0005",
+            "tactics":
+            [
+                "legitimization"
+            ]
+        },
+        {
+            "techniqueID": "T0006",
+            "tactics":
+            [
+                "legitimization"
+            ]
+        },
+        {
+            "techniqueID": "T0007",
+            "tactics":
+            [
+                "legitimization"
+            ]
+        },
+        {
+            "techniqueID": "T0008",
+            "tactics":
+            [
+                "legitimization"
+            ]
+        },
+        {
+            "techniqueID": "T0009",
+            "tactics":
+            [
+                "legitimization"
+            ]
+        },
+        {
+            "techniqueID": "T0010",
+            "tactics":
+            [
+                "legitimization"
+            ]
+        },
+        {
+            "techniqueID": "T0024",
+            "tactics":
+            [
+                "legitimization"
+            ]
+        },
+        {
+            "techniqueID": "T0011",
+            "tactics":
+            [
+                "preparation"
+            ]
+        },
+        {
+            "techniqueID": "T0012",
+            "tactics":
+            [
+                "preparation"
+            ]
+        },
+        {
+            "techniqueID": "T0013",
+            "tactics":
+            [
+                "preparation"
+            ]
+        },
+        {
+            "techniqueID": "T0014",
+            "tactics":
+            [
+                "preparation"
+            ]
+        },
+        {
+            "techniqueID": "T0015",
+            "tactics":
+            [
+                "preparation",
+                "seizure",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0016",
+            "tactics":
+            [
+                "preparation"
+            ]
+        },
+        {
+            "techniqueID": "T0088",
+            "tactics":
+            [
+                "preparation",
+                "seizure"
+            ]
+        },
+        {
+            "techniqueID": "T0039",
+            "tactics":
+            [
+                "preparation",
+                "seizure"
+            ]
+        },
+        {
+            "techniqueID": "T0107",
+            "tactics":
+            [
+                "preparation",
+                "neutralization"
+            ]
+        },
+        {
+            "techniqueID": "T0108",
+            "tactics":
+            [
+                "preparation",
+                "neutralization"
+            ]
+        },
+        {
+            "techniqueID": "T0018",
+            "tactics":
+            [
+                "seizure"
+            ]
+        },
+        {
+            "techniqueID": "T0019",
+            "tactics":
+            [
+                "seizure"
+            ]
+        },
+        {
+            "techniqueID": "T0020",
+            "tactics":
+            [
+                "seizure"
+            ]
+        },
+        {
+            "techniqueID": "T0037",
+            "tactics":
+            [
+                "seizure",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0100",
+            "tactics":
+            [
+                "seizure",
+                "neutralization",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0104",
+            "tactics":
+            [
+                "seizure",
+                "neutralization",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0048",
+            "tactics":
+            [
+                "seizure",
+                "neutralization",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0048.001",
+            "tactics":
+            [
+                "seizure",
+                "neutralization",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0048.002",
+            "tactics":
+            [
+                "seizure",
+                "neutralization",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0048.003",
+            "tactics":
+            [
+                "seizure",
+                "neutralization",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0048.004",
+            "tactics":
+            [
+                "seizure",
+                "neutralization",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0048.005",
+            "tactics":
+            [
+                "seizure",
+                "neutralization",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0048.006",
+            "tactics":
+            [
+                "seizure",
+                "neutralization",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0048.007",
+            "tactics":
+            [
+                "seizure",
+                "neutralization",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0048.008",
+            "tactics":
+            [
+                "seizure",
+                "neutralization",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0048.009",
+            "tactics":
+            [
+                "seizure",
+                "neutralization",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0105",
+            "tactics":
+            [
+                "seizure",
+                "neutralization"
+            ]
+        },
+        {
+            "techniqueID": "T0021",
+            "tactics":
+            [
+                "neutralization"
+            ]
+        },
+        {
+            "techniqueID": "T0022",
+            "tactics":
+            [
+                "neutralization",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0023",
+            "tactics":
+            [
+                "neutralization"
+            ]
+        },
+        {
+            "techniqueID": "T0025",
+            "tactics":
+            [
+                "neutralization"
+            ]
+        },
+        {
+            "techniqueID": "T0026",
+            "tactics":
+            [
+                "neutralization"
+            ]
+        },
+        {
+            "techniqueID": "T0027",
+            "tactics":
+            [
+                "neutralization"
+            ]
+        },
+        {
+            "techniqueID": "T0028",
+            "tactics":
+            [
+                "neutralization"
+            ]
+        },
+        {
+            "techniqueID": "T0053",
+            "tactics":
+            [
+                "neutralization",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0099",
+            "tactics":
+            [
+                "neutralization",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0049",
+            "tactics":
+            [
+                "neutralization",
+                "tactic-06"
+            ]
+        },
+        {
+            "techniqueID": "T0057",
+            "tactics":
+            [
+                "neutralization",
+                "tactic-06"
+            ]
+        },
+        {
+            "techniqueID": "T0501",
+            "tactics":
+            [
+                "neutralization"
+            ]
+        },
+        {
+            "techniqueID": "T0077",
+            "tactics":
+            [
+                "neutralization",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0030",
+            "tactics":
+            [
+                "neutralization",
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0110",
+            "tactics":
+            [
+                "neutralization"
+            ]
+        },
+        {
+            "techniqueID": "T0111",
+            "tactics":
+            [
+                "neutralization"
+            ]
+        },
+        {
+            "techniqueID": "T0017",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0041",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0047",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0040",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0036",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0038",
+            "tactics":
+            [
+                "persistence",
+                "tactic-06"
+            ]
+        },
+        {
+            "techniqueID": "T0043",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0032",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0033",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0034",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0035",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0042",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0031",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0044",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0045",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0046",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0050",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0058",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0101",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0103",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0109",
+            "tactics":
+            [
+                "persistence"
+            ]
+        },
+        {
+            "techniqueID": "T0067",
+            "tactics":
+            [
+                "tactic-06"
+            ]
+        },
+        {
+            "techniqueID": "T0052",
+            "tactics":
+            [
+                "tactic-06"
+            ]
+        },
+        {
+            "techniqueID": "T0056",
+            "tactics":
+            [
+                "tactic-06"
+            ]
+        },
+        {
+            "techniqueID": "T0102",
+            "tactics":
+            [
+                "tactic-06"
+            ]
+        },
+        {
+            "techniqueID": "T0066",
+            "tactics":
+            [
+                "tactic-06"
+            ]
+        },
+        {
+            "techniqueID": "T0051",
+            "tactics":
+            [
+                "tactic-06"
+            ]
+        },
+        {
+            "techniqueID": "T0112",
+            "tactics":
+            [
+                "tactic-06"
+            ]
+        }
+    ]
+}
