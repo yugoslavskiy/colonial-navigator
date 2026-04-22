@@ -31,7 +31,7 @@ export class DataService {
     }
 
     public domain_backwards_compatibility = {
-        'mitre-enterprise': 'enterprise-attack',
+        'russia-colonialism': 'russia-colonialism',
         'mitre-mobile': 'mobile-attack',
     };
     public domains: Domain[] = [];

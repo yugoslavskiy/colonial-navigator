@@ -471,7 +471,7 @@ describe('ViewmodelsService', () => {
         options.deserialize(invalidRep);
         expect(options.showID).toBe(false);
         expect(console.error).toHaveBeenCalled();
-    });
+    }); 
 
     it('should handle non-boolean showName field', () => {
         let options = new LayoutOptions();
@@ -604,7 +604,7 @@ describe('ViewmodelsService', () => {
     it('should test patch for old domain name convention', () => {
         let vm1 = viewModelsService.newViewModel('test1', 'enterprise-attack-13');
         let viewmodel_version_file1 = {
-            domain: 'mitre-enterprise',
+            domain: 'russia-colonialism',
         };
         vm1.deserializeDomainVersionID(JSON.stringify(viewmodel_version_file1));
         expect(vm1.domainVersionID).toEqual('enterprise-attack-13');

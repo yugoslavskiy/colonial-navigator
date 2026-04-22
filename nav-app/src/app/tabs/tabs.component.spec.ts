@@ -26,11 +26,11 @@ describe('TabsComponent', () => {
     let dialog: MatDialog;
     let http: HttpClient;
 
-    let testTab = new Tab('test tab', true, false, 'enterprise-attack', true);
+    let testTab = new Tab('test tab', true, false, 'russia-colonialism', true);
     let loadData = {
         url: 'https://raw.githubusercontent.com/mitre-attack/attack-navigator/master/layers/samples/Bear_APT.json',
         version: '14',
-        identifier: 'enterprise-attack',
+        identifier: 'russia-colonialism',
     };
 
     beforeEach(async () => {
@@ -95,7 +95,7 @@ describe('TabsComponent', () => {
         it('should load bundle when all fragment values are provided', waitForAsync(() => {
             let bundleURL = 'testbundleurl';
             let bundleVersion = '1';
-            let bundleDomain = 'enterprise-attack';
+            let bundleDomain = 'russia-colonialism';
             spyOn(component, 'getNamedFragmentValue').and.returnValues([bundleURL], [bundleVersion], [bundleDomain]);
             let newLayerSpy = spyOn(component, 'newLayerFromURL');
             component.loadTabs(MockData.defaultLayersDisabled).then(() => {
@@ -133,7 +133,7 @@ describe('TabsComponent', () => {
     });
 
     describe('openTab', () => {
-        let existingTab = new Tab('existing test tab', true, false, 'enterprise-attack', true);
+        let existingTab = new Tab('existing test tab', true, false, 'russia-colonialism', true);
         let selectTabSpy;
         let closeActiveTabSpy;
 
@@ -171,7 +171,7 @@ describe('TabsComponent', () => {
         });
 
         it('should close current tab and select new tab', () => {
-            let newTab = new Tab('new tab', true, false, 'enterprise-attack', true);
+            let newTab = new Tab('new tab', true, false, 'russia-colonialism', true);
             component.layerTabs = [existingTab, newTab];
             component.activeTab = newTab;
             component.openTab('new test tab', null, false, true, true);
@@ -197,8 +197,8 @@ describe('TabsComponent', () => {
     });
 
     describe('close tab', () => {
-        let firstTab = new Tab('first tab', true, false, 'enterprise-attack', true);
-        let secondTab = new Tab('second tab', true, false, 'enterprise-attack', true);
+        let firstTab = new Tab('first tab', true, false, 'russia-colonialism', true);
+        let secondTab = new Tab('second tab', true, false, 'russia-colonialism', true);
         let selectTabSpy;
         let newBlankTabSpy;
 
@@ -386,8 +386,8 @@ describe('TabsComponent', () => {
         });
 
         it('should activate clicked tab and reset dropdown', () => {
-            let activeTab = new Tab('active tab', true, false, 'enterprise-attack', true);
-            let clickedTab = new Tab('clicked tab', true, false, 'enterprise-attack', true);
+            let activeTab = new Tab('active tab', true, false, 'russia-colonialism', true);
+            let clickedTab = new Tab('clicked tab', true, false, 'russia-colonialism', true);
             component.activeTab = activeTab;
 
             component.handleTabClick(clickedTab);
@@ -397,7 +397,7 @@ describe('TabsComponent', () => {
         });
 
         it('should toggle dropdown state if clicked tab is active', () => {
-            let activeTab = new Tab('active tab', true, false, 'enterprise-attack', true);
+            let activeTab = new Tab('active tab', true, false, 'russia-colonialism', true);
             component.activeTab = activeTab;
             component.dropdownEnabled = '';
 

@@ -32,14 +32,14 @@ describe('DataService', () => {
         });
 
         it('should get domainVersionID with latest version', () => {
-            let domainIdentifier = 'enterprise-attack';
+            let domainIdentifier = 'russia-colonialism';
             let result = dataService.getDomainVersionID(domainIdentifier, '');
             let latestVersion = dataService.versions[0].number;
             expect(result).toEqual(`${domainIdentifier}-${latestVersion}`);
         });
 
         it('should get domainVersionID', () => {
-            let domainIdentifier = 'enterprise-attack';
+            let domainIdentifier = 'russia-colonialism';
             let version = '13';
             let result = dataService.getDomainVersionID(domainIdentifier, version);
             expect(result).toEqual(`${domainIdentifier}-${version}`);
@@ -69,7 +69,7 @@ describe('DataService', () => {
 
         it('should get domain identifier from name', () => {
             const domainName = 'Enterprise ATT&CK';
-            expect(dataService.getDomainIdentifier(domainName)).toEqual('enterprise-attack');
+            expect(dataService.getDomainIdentifier(domainName)).toEqual('russia-colonialism');
         });
 
         it('should handle empty string', () => {
