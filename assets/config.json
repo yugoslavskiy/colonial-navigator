@@ -43,7 +43,7 @@
         "enabled": true,
         "urls":
         [
-            "assets/colonial_full_layer.json"
+            "https://yugoslavskiy.github.io/stix/colonial_full_layer.json"
         ]
     },
     "comment_color": "yellow",
