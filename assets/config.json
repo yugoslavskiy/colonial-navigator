@@ -14,7 +14,7 @@
                         "identifier": "russia-colonialism",
                         "data":
                         [
-                            "https://yugoslavskiy.github.io/stix/russia-colonialism.json"
+                            "https://decolonial.ist/stix/russia-colonialism.json"
                         ]
                     }
                 ]
@@ -29,7 +29,7 @@
                         "identifier": "russia-colonialism",
                         "data":
                         [
-                            "https://yugoslavskiy.github.io/stix/russia-colonialism.json"
+                            "https://decolonial.ist/stix/russia-colonialism.json"
                         ]
                     }
                 ]
@@ -43,7 +43,7 @@
         "enabled": true,
         "urls":
         [
-            "https://yugoslavskiy.github.io/stix/colonial_full_layer.json"
+            "https://decolonial.ist/stix/colonial_full_layer.json"
         ]
     },
     "comment_color": "yellow",
