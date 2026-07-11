@@ -5,22 +5,7 @@
         "entries":
         [
             {
-                "name": "Custom Data v14",
-                "version": "14",
-                "domains":
-                [
-                    {
-                        "name": "russia-colonialism",
-                        "identifier": "russia-colonialism",
-                        "data":
-                        [
-                            "https://decolonial.ist/stix/russia-colonialism.json"
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "Custom Data v18",
+                "name": "DECOLONIAL.IST v18",
                 "version": "18",
                 "domains":
                 [
@@ -29,7 +14,7 @@
                         "identifier": "russia-colonialism",
                         "data":
                         [
-                            "https://decolonial.ist/stix/russia-colonialism.json"
+                            "/stix/russia-colonialism.json"
                         ]
                     }
                 ]
@@ -43,7 +28,7 @@
         "enabled": true,
         "urls":
         [
-            "https://decolonial.ist/stix/colonial_full_layer.json"
+            "/stix/colonial_full_layer.json"
         ]
     },
     "comment_color": "yellow",

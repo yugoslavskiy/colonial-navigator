@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/version-upgrade/version-upgrade.component.scss"],
+  "sourcesContent": [".mat-dialog {\n    text-align: center;\n    .mat-mdc-dialog-actions {\n        display: inline-block;\n    }\n}\n"],
+  "mappings": ";AAAA,CAAA;AACI,cAAA;;AACA,CAFJ,WAEI,CAAA;AACI,WAAA;;",
+  "names": []
+}
