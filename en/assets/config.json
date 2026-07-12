@@ -14,7 +14,7 @@
                         "identifier": "russia-colonialism",
                         "data":
                         [
-                            "/stix/russia-colonialism-en.json"
+                            "https://decolonial.ist/stix/russia-colonialism-en.json"
                         ]
                     }
                 ]
@@ -28,7 +28,7 @@
         "enabled": true,
         "urls":
         [
-            "/stix/colonial_full_layer-en.json"
+            "https://decolonial.ist/stix/colonial_full_layer-en.json"
         ]
     },
     "comment_color": "yellow",
