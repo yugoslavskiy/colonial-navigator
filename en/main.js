@@ -179844,6 +179844,7 @@ var TabsComponent = class _TabsComponent {
     this.showHelpDropDown = false;
     this.loadURL = "";
     this.layerLinkURLs = [];
+    this.startupPlatformFilter = [];
     this.copiedRecently = false;
     this.loadData = {
       url: void 0,
@@ -179897,6 +179898,7 @@ var TabsComponent = class _TabsComponent {
       let bundleVersion = this.getNamedFragmentValue("version")[0];
       let bundleDomain = this.getNamedFragmentValue("domain")[0];
       let layerURLs = this.getNamedFragmentValue("layerURL");
+      this.startupPlatformFilter = this.getNamedPlatformFilter();
       let self2 = this;
       if (bundleURL?.length && bundleVersion && bundleDomain?.length) {
         self2.newLayerFromURL({
@@ -179918,6 +179920,21 @@ var TabsComponent = class _TabsComponent {
         }
       }
     });
+  }
+  /**
+   * Read the #platforms=... URL fragment as a flat list of platform (народ) names.
+   * Supports repeated fragments and comma-separated values within one.
+   */
+  getNamedPlatformFilter() {
+    let result = [];
+    for (let raw of this.getNamedFragmentValue("platforms")) {
+      for (let part of raw.split(",")) {
+        let trimmed = part.trim();
+        if (trimmed)
+          result.push(trimmed);
+      }
+    }
+    return result;
   }
   /**
    * Open a new tab
@@ -180521,6 +180538,11 @@ var TabsComponent = class _TabsComponent {
           next: (res) => __async(this, null, function* () {
             let loadLayerAsync = function(layerObj) {
               return __async(this, null, function* () {
+                if (defaultLayers && self2.startupPlatformFilter.length && layerObj && typeof layerObj === "object") {
+                  layerObj.filters = Object.assign({}, layerObj.filters, {
+                    platforms: self2.startupPlatformFilter.slice()
+                  });
+                }
                 let viewModel = self2.viewModelsService.newViewModel("loading layer...", void 0);
                 try {
                   let layerVersionStr = viewModel.deserializeDomainVersionID(layerObj);
