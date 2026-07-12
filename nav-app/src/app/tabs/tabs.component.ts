@@ -90,6 +90,10 @@ export class TabsComponent implements AfterViewInit {
     public loadURL: string = '';
     public layerLinkURLs: string[] = [];
     public bannerContent: string;
+
+    // Народы из URL-фрагмента #platforms=... — вносятся в стартовый слой до
+    // десериализации, чтобы матрица народа открывала общий слой отфильтрованным.
+    public startupPlatformFilter: string[] = [];
     public subscription: Subscription;
     public copiedRecently: boolean = false; // true if copyLayerLink is called, reverts to false after 2 seconds
     public loadData: any = {
@@ -172,6 +176,15 @@ export class TabsComponent implements AfterViewInit {
         let bundleDomain = this.getNamedFragmentValue('domain')[0];
         let layerURLs = this.getNamedFragmentValue('layerURL');
 
+        // #platforms=<народ>[,<народ>] — фильтр платформ (народов) для стартового слоя.
+        // Позволяет матрице конкретного народа (Нохчи, Украинцы) открывать общий
+        // предгенерированный слой, но сразу отфильтрованный по народу, без отдельного
+        // пер-народного файла. Значение — имя народа на языке бандла. Фильтр вносится
+        // в сам объект слоя ДО десериализации (см. loadLayerFromURL), поэтому выбор
+        // приходит штатным путём и не перетирается инициализацией данных домена
+        // (гонка cold/warm-кэша, если применять фильтр уже после загрузки).
+        this.startupPlatformFilter = this.getNamedPlatformFilter();
+
         let self = this;
         if (bundleURL?.length && bundleVersion && bundleDomain?.length) {
             // load base data from URL
@@ -195,6 +208,22 @@ export class TabsComponent implements AfterViewInit {
                 first = false;
             }
         }
+
+    }
+
+    /**
+     * Read the #platforms=... URL fragment as a flat list of platform (народ) names.
+     * Supports repeated fragments and comma-separated values within one.
+     */
+    public getNamedPlatformFilter(): string[] {
+        let result: string[] = [];
+        for (let raw of this.getNamedFragmentValue('platforms')) {
+            for (let part of raw.split(',')) {
+                let trimmed = part.trim();
+                if (trimmed) result.push(trimmed);
+            }
+        }
+        return result;
     }
 
     /**
@@ -882,6 +911,14 @@ export class TabsComponent implements AfterViewInit {
             subscription = self.http.get(loadURL).subscribe({
                 next: async (res) => {
                     let loadLayerAsync = async function (layerObj) {
+                        // Стартовый фильтр народов из #platforms=... вносим в сам объект
+                        // слоя ДО десериализации: выбор платформ приходит штатным путём и
+                        // не зависит от тайминга загрузки данных домена (cold/warm-кэш).
+                        if (defaultLayers && self.startupPlatformFilter.length && layerObj && typeof layerObj === 'object') {
+                            layerObj.filters = Object.assign({}, layerObj.filters, {
+                                platforms: self.startupPlatformFilter.slice(),
+                            });
+                        }
                         let viewModel = self.viewModelsService.newViewModel('loading layer...', undefined);
                         try {
                             let layerVersionStr = viewModel.deserializeDomainVersionID(layerObj);
