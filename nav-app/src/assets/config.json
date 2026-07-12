@@ -5,14 +5,8 @@
         "entries":
         [
             {
-                "name": "Custom Data v14",
-                "version": "14",
-                "authentication":
-                {
-                    "enabled": true,
-                    "serviceName": "taxii-server",
-                    "apiKey": "secret-squirrel"
-                },
+                "name": "DECOLONIAL.IST v18",
+                "version": "18",
                 "domains":
                 [
                     {
@@ -20,7 +14,7 @@
                         "identifier": "russia-colonialism",
                         "data":
                         [
-                            "http://localhost:3000/api/stix-bundles?domain=russia-colonialism"
+                            "/stix/russia-colonialism.json"
                         ]
                     }
                 ]
@@ -31,11 +25,10 @@
     [],
     "default_layers":
     {
-        "enabled": false,
+        "enabled": true,
         "urls":
         [
-            "assets/example.json",
-            "https://raw.githubusercontent.com/mitre-attack/attack-navigator/master/layers/samples/Bear_APT.json"
+            "/stix/colonial_full_layer.json"
         ]
     },
     "comment_color": "yellow",

@@ -3,30 +3,30 @@
         <mat-card>
             <div class="settings">
                 <mat-card-title>
-                    <h4 class="title">Layer Information</h4>
+                    <h4 class="title">{{ 'Layer Information' | tr }}</h4>
                 </mat-card-title>
                 <mat-card-content>
                     <div class="info-field">
                         <mat-form-field class="hide-subscript">
-                            <mat-label>Name</mat-label>
+                            <mat-label>{{ 'Name' | tr }}</mat-label>
                             <input matInput type="text" [(ngModel)]="viewModel.name" />
                         </mat-form-field>
                     </div>
                     <div class="info-field">
                         <mat-form-field>
-                            <mat-label>Description</mat-label>
+                            <mat-label>{{ 'Description' | tr }}</mat-label>
                             <textarea matInput matTextareaAutosize [(ngModel)]="viewModel.description"></textarea>
                         </mat-form-field>
                     </div>
                     <div class="info-field">
                         <mat-form-field>
-                            <mat-label>Domain</mat-label>
+                            <mat-label>{{ 'Domain' | tr }}</mat-label>
                             <input matInput readonly disabled type="text" [(ngModel)]="dataService.getDomain(viewModel.domainVersionID).name" />
                         </mat-form-field>
                     </div>
                     <div class="info-field">
                         <mat-form-field>
-                            <mat-label>Version</mat-label>
+                            <mat-label>{{ 'Version' | tr }}</mat-label>
                             <input
                                 matInput
                                 readonly
@@ -44,7 +44,7 @@
         <mat-card>
             <div class="settings layer-data">
                 <mat-card-title>
-                    <h4 class="title">Metadata</h4>
+                    <h4 class="title">{{ 'Metadata' | tr }}</h4>
                 </mat-card-title>
                 <mat-card-content>
                     <div class="data-input">
@@ -66,7 +66,7 @@
         <mat-card>
             <div class="settings layer-data">
                 <mat-card-title>
-                    <h4 class="title">Links</h4>
+                    <h4 class="title">{{ 'Links' | tr }}</h4>
                 </mat-card-title>
                 <mat-card-content>
                     <div class="data-input">
@@ -89,13 +89,13 @@
         <mat-card>
             <div class="settings">
                 <mat-card-title>
-                    <h4 class="title">Matrix Layout</h4>
+                    <h4 class="title">{{ 'Matrix Layout' | tr }}</h4>
                 </mat-card-title>
                 <mat-card-content>
                     @for (option of viewModel.layout.layoutOptions; track option) {
                         <div>
                             <input type="radio" [value]="option" [(ngModel)]="viewModel.layout.layout" [name]="option" />
-                            {{ option }} layout
+                            {{ option }} {{ 'layout' | tr }}
                         </div>
                     }
                 </mat-card-content>
@@ -104,7 +104,7 @@
         <mat-card>
             <div class="settings">
                 <mat-card-title>
-                    <h4 class="title">Labels</h4>
+                    <h4 class="title">{{ 'Labels' | tr }}</h4>
                 </mat-card-title>
                 <mat-card-content>
                     <div>
@@ -115,7 +115,7 @@
                             type="checkbox"
                             [(ngModel)]="viewModel.layout.showID" />
                         <label [class.disabled]="viewModel.layout.layout == 'mini'" for="showID-option" class="checkbox-custom-label noselect">
-                            show IDs
+                            {{ 'show IDs' | tr }}
                         </label>
                     </div>
                     <div>
@@ -126,7 +126,7 @@
                             type="checkbox"
                             [(ngModel)]="viewModel.layout.showName" />
                         <label [class.disabled]="viewModel.layout.layout == 'mini'" for="showName-option" class="checkbox-custom-label noselect">
-                            show names
+                            {{ 'show names' | tr }}
                         </label>
                     </div>
                 </mat-card-content>
@@ -137,7 +137,7 @@
         <mat-card>
             <div class="settings">
                 <mat-card-title>
-                    <h4 class="title">Aggregate Scores</h4>
+                    <h4 class="title">{{ 'Aggregate Scores' | tr }}</h4>
                 </mat-card-title>
                 <mat-card-content>
                     <div>
@@ -146,7 +146,7 @@
                             class="checkbox-custom"
                             type="checkbox"
                             [(ngModel)]="viewModel.layout.showAggregateScores" />
-                        <label for="showAggregateScores-option" class="checkbox-custom-label noselect">show aggregate scores</label>
+                        <label for="showAggregateScores-option" class="checkbox-custom-label noselect">{{ 'show aggregate scores' | tr }}</label>
                     </div>
                     <div>
                         <input
@@ -159,12 +159,12 @@
                             [class.disabled]="!viewModel.layout.showAggregateScores || viewModel.layout.aggregateFunction !== 'average'"
                             for="countUnscored-option"
                             class="checkbox-custom-label noselect">
-                            count unscored techniques as 0
+                            {{ 'count unscored techniques as 0' | tr }}
                         </label>
                     </div>
 
                     <div class="sub-section">
-                        <mat-label>Aggregate Function</mat-label>
+                        <mat-label>{{ 'Aggregate Function' | tr }}</mat-label>
                         <div class="padding-top">
                             @for (option of viewModel.layout.aggregateFunctionOptions; track option) {
                                 <div>
@@ -185,6 +185,6 @@
     </div>
     <mat-divider></mat-divider>
     <div class="button-container sidebar-content">
-        <button (click)="viewModel.sidebarOpened = !viewModel.sidebarOpened" mat-raised-button>Close</button>
+        <button (click)="viewModel.sidebarOpened = !viewModel.sidebarOpened" mat-raised-button>{{ 'Close' | tr }}</button>
     </div>
 </div>

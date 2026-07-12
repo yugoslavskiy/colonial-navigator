@@ -2,7 +2,7 @@
     <div *ngFor="let item of list; let i = index">
         <!-- remove divider -->
         <div class="divider-button-container" *ngIf="item.divider">
-            <button class="divider-button divider" (click)="removeDivider(i)" matTooltipPosition="below" matTooltip="remove divider">
+            <button class="divider-button divider" (click)="removeDivider(i)" matTooltipPosition="below" [matTooltip]="'remove divider' | tr">
                 <span class="line"></span>
                 <mat-icon class="icon">remove</mat-icon>
                 <span class="line"></span>
@@ -10,7 +10,7 @@
         </div>
         <!-- add divider -->
         <div class="divider-button-container" *ngIf="!item.divider && canAddDivider(i)">
-            <button class="divider-button divider-option" (click)="addDivider(i)" matTooltipPosition="below" matTooltip="add a divider">
+            <button class="divider-button divider-option" (click)="addDivider(i)" matTooltipPosition="below" [matTooltip]="'add a divider' | tr">
                 <span class="line"></span>
                 <mat-icon class="icon">add</mat-icon>
                 <span class="line"></span>
@@ -36,11 +36,11 @@
                 {{ item[config.nameField] }}
             </a>
             <div class="remove-button">
-                <button class="button" (click)="remove(i)">remove</button>
+                <button class="button" (click)="remove(i)">{{ 'remove' | tr }}</button>
             </div>
         </div>
     </div>
 </div>
 <div class="add-more">
-    <button class="button" (click)="add()">add {{ config.type }}</button>
+    <button class="button" (click)="add()">{{ 'add' | tr }} {{ config.type }}</button>
 </div>

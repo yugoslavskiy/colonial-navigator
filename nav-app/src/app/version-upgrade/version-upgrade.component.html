@@ -1,16 +1,16 @@
 <div class="mat-dialog">
-    <h3 mat-dialog-title>Upgrade layer version?</h3>
+    <h3 mat-dialog-title>{{ 'Upgrade layer version?' | tr }}</h3>
     <mat-dialog-content>
         <p>
-            The layer "{{ layerName }}" uses an outdated version of ATT&CK (v{{ vmVersion }}). Do you want to open the workflow to upgrade this layer
-            to ATT&CK v{{ currVersion }}?
+            {{ 'The layer' | tr }} "{{ layerName }}" {{ 'uses an outdated version of ATT&CK' | tr }} (v{{ vmVersion }}).
+            {{ 'Do you want to open the workflow to upgrade this layer to ATT&CK v' | tr }}{{ currVersion }}?
             <em *ngIf="!this.dataService.isSupported(vmVersion)">
-                This version is not supported by Navigator v{{ navVersion }} and must be upgraded for use.
+                {{ 'This version is not supported by Navigator v' | tr }}{{ navVersion }} {{ 'and must be upgraded for use.' | tr }}
             </em>
         </p>
     </mat-dialog-content>
     <mat-dialog-actions>
-        <button mat-stroked-button (click)="upgradeVersion(true)">Yes</button>
-        <button mat-button (click)="upgradeVersion(false)">No</button>
+        <button mat-stroked-button (click)="upgradeVersion(true)">{{ 'Yes' | tr }}</button>
+        <button mat-button (click)="upgradeVersion(false)">{{ 'No' | tr }}</button>
     </mat-dialog-actions>
 </div>

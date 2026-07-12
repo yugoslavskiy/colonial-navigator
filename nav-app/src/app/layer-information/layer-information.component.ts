@@ -4,13 +4,14 @@ import { CdkScrollable } from '@angular/cdk/scrolling';
 import { MatDialogContent, MatDialogActions, MatDialogClose } from '@angular/material/dialog';
 import { MarkdownComponent } from 'ngx-markdown';
 import { MatButton } from '@angular/material/button';
+import { TrPipe } from '../utils/tr.pipe';
 
 @Component({
     selector: 'app-layer-information',
     templateUrl: './layer-information.component.html',
     styleUrls: ['./layer-information.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    imports: [CdkScrollable, MatDialogContent, MarkdownComponent, MatDialogActions, MatButton, MatDialogClose],
+    imports: [CdkScrollable, MatDialogContent, MarkdownComponent, MatDialogActions, MatButton, MatDialogClose, TrPipe],
 })
 export class LayerInformationComponent {
     public get layerFormatLink(): string {

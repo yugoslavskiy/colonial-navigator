@@ -1,9 +1,9 @@
 <div class="changelog-dialog mat-dialog">
-    <h1 mat-dialog-title>Changelog</h1>
+    <h1 mat-dialog-title>{{ 'Changelog' | tr }}</h1>
     <mat-dialog-content class="content markdown">
         <markdown #markdownElement [src]="'./CHANGELOG.md'"></markdown>
     </mat-dialog-content>
     <mat-dialog-actions>
-        <button mat-button mat-dialog-close>close</button>
+        <button mat-button mat-dialog-close>{{ 'close' | tr }}</button>
     </mat-dialog-actions>
 </div>

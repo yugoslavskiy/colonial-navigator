@@ -6,13 +6,14 @@ import { Parser } from 'marked';
 import { MatButton } from '@angular/material/button';
 import { CdkScrollable } from '@angular/cdk/scrolling';
 import { NgIf, NgFor } from '@angular/common';
+import { TrPipe } from '../utils/tr.pipe';
 
 @Component({
     selector: 'help',
     templateUrl: './help.component.html',
     styleUrls: ['./help.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    imports: [MatDialogTitle, MatButton, CdkScrollable, MatDialogContent, NgIf, NgFor, MarkdownComponent, MatDialogActions, MatDialogClose],
+    imports: [MatDialogTitle, MatButton, CdkScrollable, MatDialogContent, NgIf, NgFor, MarkdownComponent, MatDialogActions, MatDialogClose, TrPipe],
 })
 export class HelpComponent implements OnInit {
     private listenObj: any;

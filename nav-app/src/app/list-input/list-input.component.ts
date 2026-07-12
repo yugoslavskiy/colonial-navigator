@@ -6,13 +6,14 @@ import { MatIcon } from '@angular/material/icon';
 import { MatFormField, MatLabel } from '@angular/material/select';
 import { MatInput } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { TrPipe } from '../utils/tr.pipe';
 
 @Component({
     selector: 'app-list-input',
     templateUrl: './list-input.component.html',
     styleUrls: ['./list-input.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    imports: [NgFor, NgIf, MatTooltip, MatIcon, MatFormField, MatLabel, MatInput, FormsModule],
+    imports: [NgFor, NgIf, MatTooltip, MatIcon, MatFormField, MatLabel, MatInput, FormsModule, TrPipe],
 })
 export class ListInputComponent implements OnInit {
     @Input() config: ListInputConfig;

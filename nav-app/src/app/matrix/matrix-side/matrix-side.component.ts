@@ -5,13 +5,14 @@ import { ViewModelsService } from '../../services/viewmodels.service';
 import { NgFor, NgStyle, NgIf, NgClass } from '@angular/common';
 import { TacticCellComponent } from '../tactic-cell/tactic-cell.component';
 import { TechniqueCellComponent } from '../technique-cell/technique-cell.component';
+import { TrPipe } from '../../utils/tr.pipe';
 
 @Component({
     selector: 'matrix-side',
     templateUrl: './matrix-side.component.html',
     styleUrls: ['./matrix-side.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    imports: [NgFor, NgStyle, TacticCellComponent, NgIf, TechniqueCellComponent, NgClass],
+    imports: [NgFor, NgStyle, TacticCellComponent, NgIf, TechniqueCellComponent, NgClass, TrPipe],
 })
 export class MatrixSideComponent extends MatrixCommon implements OnInit {
     constructor(configService: ConfigService, viewModelsService: ViewModelsService) {

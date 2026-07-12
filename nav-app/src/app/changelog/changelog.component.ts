@@ -3,11 +3,12 @@ import { MAT_DIALOG_DATA, MatDialog, MatDialogTitle, MatDialogContent, MatDialog
 import { MarkdownComponent, MarkdownService } from 'ngx-markdown';
 import { CdkScrollable } from '@angular/cdk/scrolling';
 import { MatButton } from '@angular/material/button';
+import { TrPipe } from '../utils/tr.pipe';
 
 @Component({
     selector: 'app-changelog',
     templateUrl: './changelog.component.html',
-    imports: [MatDialogTitle, CdkScrollable, MatDialogContent, MarkdownComponent, MatDialogActions, MatButton, MatDialogClose],
+    imports: [MatDialogTitle, CdkScrollable, MatDialogContent, MarkdownComponent, MatDialogActions, MatButton, MatDialogClose, TrPipe],
 })
 export class ChangelogComponent {
     @ViewChild('markdownElement', { static: false }) public markdownElement: any;

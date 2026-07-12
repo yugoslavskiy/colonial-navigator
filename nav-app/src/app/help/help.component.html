@@ -1,13 +1,13 @@
 <div class="help-dialog mat-dialog">
     <h1 mat-dialog-title>
-        <span style="margin-left: 50px">Documentation</span>
+        <span style="margin-left: 50px">{{ 'Documentation' | tr }}</span>
         <div class="top-button">
-            <button mat-button (click)="scrollTo('toc')">Top ^</button>
+            <button mat-button (click)="scrollTo('toc')">{{ 'Top ^' | tr }}</button>
         </div>
     </h1>
     <mat-dialog-content class="content markdown">
         <div class="col toc">
-            <h1>Table of Contents</h1>
+            <h1>{{ 'Table of Contents' | tr }}</h1>
             <ul class="table-of-contents" *ngIf="headingAnchors.length > 0">
                 <li *ngFor="let heading of headingAnchors" class="toc-heading level-{{ heading.level }}">
                     <a (click)="scrollTo(heading.anchor)">{{ heading.label }}</a>
@@ -17,6 +17,6 @@
         <markdown #markdownElement [src]="'./USAGE.md'" (load)="onMarkdownLoad($event)"></markdown>
     </mat-dialog-content>
     <mat-dialog-actions>
-        <button mat-button mat-dialog-close>close</button>
+        <button mat-button mat-dialog-close>{{ 'close' | tr }}</button>
     </mat-dialog-actions>
 </div>

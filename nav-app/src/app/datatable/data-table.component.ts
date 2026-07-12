@@ -9,6 +9,7 @@ import { Subscription } from 'rxjs';
 import * as Excel from 'exceljs/dist/exceljs.min.js';
 import tinycolor from 'tinycolor2';
 import { isIE } from '../utils/utils';
+import { TrPipe } from '../utils/tr.pipe';
 import { NgIf, NgClass, NgFor, NgSwitch, NgSwitchCase, TitleCasePipe } from '@angular/common';
 import { MatTooltip } from '@angular/material/tooltip';
 import { FormsModule } from '@angular/forms';
@@ -56,6 +57,7 @@ import { MatIconButton } from '@angular/material/button';
         MatIconButton,
         MatSuffix,
         TitleCasePipe,
+        TrPipe,
     ],
 })
 export class DataTableComponent implements AfterViewInit, OnDestroy {

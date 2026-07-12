@@ -10,7 +10,7 @@
         <tr>
             <td *ngFor="let tactic of filterTactics(matrix.tactics)" class="tactic count" [ngStyle]="getTacticBackground()">
                 {{ filterTechniques(tactic.techniques, tactic).length }}
-                <ng-container *ngIf="viewModel.layout.showName">&nbsp;techniques</ng-container>
+                <ng-container *ngIf="viewModel.layout.showName">&nbsp;{{ 'techniques' | tr }}</ng-container>
             </td>
         </tr>
     </thead>

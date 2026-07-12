@@ -7,13 +7,14 @@ import { CellPopover } from '../cell-popover';
 import { NgClass, NgIf, NgFor } from '@angular/common';
 import { MatTooltip } from '@angular/material/tooltip';
 import { MatIcon } from '@angular/material/icon';
+import { TrPipe } from '../../../utils/tr.pipe';
 
 @Component({
     selector: 'app-tooltip',
     templateUrl: './tooltip.component.html',
     styleUrls: ['./tooltip.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    imports: [NgClass, NgIf, MatTooltip, MatIcon, NgFor],
+    imports: [NgClass, NgIf, MatTooltip, MatIcon, NgFor, TrPipe],
 })
 export class TooltipComponent extends CellPopover implements OnInit {
     @Input() technique: Technique;

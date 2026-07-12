@@ -19,6 +19,7 @@ import {
     MatExpansionPanelContent,
 } from '@angular/material/expansion';
 import { MatButton } from '@angular/material/button';
+import { TrPipe } from '../utils/tr.pipe';
 
 @Component({
     selector: 'app-search-and-multiselect',
@@ -44,6 +45,7 @@ import { MatButton } from '@angular/material/button';
         NgIf,
         MatButton,
         TitleCasePipe,
+        TrPipe,
     ],
 })
 export class SearchAndMultiselectComponent implements OnInit {

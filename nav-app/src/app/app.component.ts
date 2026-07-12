@@ -6,19 +6,20 @@ import * as globals from './utils/globals';
 import { IconsService } from './services/icons.service';
 import { deleteCookie, getCookie, hasCookie, setCookie } from './utils/cookies';
 import { NgClass } from '@angular/common';
+import { TrPipe, tr } from './utils/tr.pipe';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    imports: [NgClass, TabsComponent],
+    imports: [NgClass, TabsComponent, TrPipe],
 })
 export class AppComponent implements OnInit {
     @ViewChild(TabsComponent) tabsComponent;
 
     navVersion: string = globals.navVersion;
     public user_theme: string;
-    title = 'ATT&CK® Navigator';
+    title = tr('DECOLONIAL.IST Navigator');
 
     @HostListener('window:beforeunload', ['$event'])
     promptNavAway($event) {

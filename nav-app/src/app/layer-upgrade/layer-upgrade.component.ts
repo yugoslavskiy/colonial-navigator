@@ -21,6 +21,7 @@ import { MatTooltip } from '@angular/material/tooltip';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { ChangelogCellComponent } from './changelog-cell/changelog-cell.component';
 import { MatButton } from '@angular/material/button';
+import { TrPipe } from '../utils/tr.pipe';
 
 @Component({
     selector: 'layer-upgrade',
@@ -52,6 +53,7 @@ import { MatButton } from '@angular/material/button';
         MatButton,
         MatStepperPrevious,
         MatStepperNext,
+        TrPipe,
     ],
 })
 export class LayerUpgradeComponent implements OnInit {

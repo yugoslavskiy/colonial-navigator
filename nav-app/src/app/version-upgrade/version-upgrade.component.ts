@@ -6,13 +6,14 @@ import * as globals from '../utils/globals';
 import { CdkScrollable } from '@angular/cdk/scrolling';
 import { NgIf } from '@angular/common';
 import { MatButton } from '@angular/material/button';
+import { TrPipe } from '../utils/tr.pipe';
 
 @Component({
     selector: 'app-version-upgrade',
     templateUrl: './version-upgrade.component.html',
     styleUrls: ['./version-upgrade.component.scss'],
     providers: [ViewModelsService],
-    imports: [MatDialogTitle, CdkScrollable, MatDialogContent, NgIf, MatDialogActions, MatButton],
+    imports: [MatDialogTitle, CdkScrollable, MatDialogContent, NgIf, MatDialogActions, MatButton, TrPipe],
 })
 export class VersionUpgradeComponent implements OnInit {
     navVersion = globals.navVersion;

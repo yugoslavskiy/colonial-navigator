@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { MatInput } from '@angular/material/input';
 import { ColorPickerDirective } from 'ngx-color-picker';
 import { MatButton } from '@angular/material/button';
+import { TrPipe } from '../utils/tr.pipe';
 declare var d3: any; //d3js
 
 @Component({
@@ -35,6 +36,7 @@ declare var d3: any; //d3js
         MatDialogActions,
         MatButton,
         MatDialogClose,
+        TrPipe,
     ],
 })
 export class SvgExportComponent implements OnInit {

@@ -5,13 +5,14 @@ import { ViewModelsService } from '../../../services/viewmodels.service';
 import { ConfigService } from '../../../services/config.service';
 import { CellPopover } from '../cell-popover';
 import { NgClass, NgIf, NgFor } from '@angular/common';
+import { TrPipe } from '../../../utils/tr.pipe';
 
 @Component({
     selector: 'app-contextmenu',
     templateUrl: './contextmenu.component.html',
     styleUrls: ['./contextmenu.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    imports: [NgClass, NgIf, NgFor],
+    imports: [NgClass, NgIf, NgFor, TrPipe],
 })
 export class ContextmenuComponent extends CellPopover implements OnInit {
     @Input() technique: Technique;

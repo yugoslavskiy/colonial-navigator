@@ -5,17 +5,17 @@
         <mat-card-content>
             <!-- title -->
             <div class="title">
-                <h2>Layer Upgrade</h2>
-                (ATT&CK v{{ compareTo.version }}
+                <h2>{{ 'Layer Upgrade' | tr }}</h2>
+                ({{ 'ATT&CK v' | tr }}{{ compareTo.version }}
                 <mat-icon inline="true">east</mat-icon>
-                ATT&CK v{{ viewModel.version }})
+                {{ 'ATT&CK v' | tr }}{{ viewModel.version }})
             </div>
             <p>
-                Review techniques which have been added, changed, replaced, or removed from the knowledge base since ATT&CK v{{ compareTo.version }}
-                and update your Navigator layer to reflect these changes.
+                {{ 'Review techniques which have been added, changed, replaced, or removed from the knowledge base since ATT&CK v' | tr }}{{ compareTo.version }}
+                {{ 'and update your Navigator layer to reflect these changes.' | tr }}
             </p>
             <p>
-                <a href="https://attack.mitre.org/resources/versions/" target="_blank" rel="noopener noreferrer">View Versions of ATT&CK</a>
+                <a href="https://attack.mitre.org/resources/versions/" target="_blank" rel="noopener noreferrer">{{ 'View Versions of ATT&CK' | tr }}</a>
             </p>
         </mat-card-content>
     </mat-card>
@@ -24,7 +24,7 @@
 
     <mat-vertical-stepper #stepper linear>
         <mat-step *ngFor="let section of sections">
-            <ng-template matStepLabel>Review {{ getHeader(section) }}</ng-template>
+            <ng-template matStepLabel>{{ 'Review' | tr }} {{ getHeader(section) }}</ng-template>
 
             <div *ngIf="getDescription(section) as desc" class="description">
                 <span>{{ desc }}</span>
@@ -33,7 +33,7 @@
             <mat-divider></mat-divider>
 
             <div *ngIf="changelog[section].length > 0">
-                <h4>Options</h4>
+                <h4>{{ 'Options' | tr }}</h4>
                 <div *ngIf="section !== 'additions'">
                     <input
                         id="filter_{{ section }}"
@@ -47,8 +47,8 @@
                         class="checkbox-custom-label noselect"
                         [class.disabled]="disableFilter(section)"
                         matTooltipPosition="above"
-                        [matTooltip]="disableFilter(section) ? 'no annotated techniques' : ''">
-                        show annotated techniques only
+                        [matTooltip]="disableFilter(section) ? ('no annotated techniques' | tr) : ''">
+                        {{ 'show annotated techniques only' | tr }}
                     </label>
                 </div>
                 <input id="filter_review_all_{{ section }}" class="checkbox-custom" type="checkbox" (change)="reviewAll(section)" />
@@ -56,16 +56,16 @@
                     for="filter_review_all_{{ section }}"
                     class="checkbox-custom-label noselect"
                     matTooltipPosition="above"
-                    [matTooltip]="'mark all as reviewed'">
-                    mark all as reviewed
+                    [matTooltip]="'mark all as reviewed' | tr">
+                    {{ 'mark all as reviewed' | tr }}
                 </label>
                 <input id="filter_expand_visible_{{ section }}" class="checkbox-custom" type="checkbox" (change)="expandAll(section)" />
                 <label
                     for="filter_expand_visible_{{ section }}"
                     class="checkbox-custom-label noselect"
                     matTooltipPosition="above"
-                    [matTooltip]="'expand visible techniques'">
-                    expand visible techniques
+                    [matTooltip]="'expand visible techniques' | tr">
+                    {{ 'expand visible techniques' | tr }}
                 </label>
 
                 <div class="spinner" *ngIf="loading">
@@ -88,7 +88,7 @@
                                         <div class="float wide" *ngIf="section !== 'additions'">
                                             <div class="version">
                                                 <a href="{{ getPreservedURL(attackID) }}" target="_blank" rel="noopener noreferrer">
-                                                    ATT&CK v{{ compareTo.version }}
+                                                    {{ 'ATT&CK v' | tr }}{{ compareTo.version }}
                                                 </a>
                                             </div>
                                             <mat-divider></mat-divider>
@@ -102,7 +102,7 @@
                                                     href="{{ getTechnique(attackID, viewModel, section).url }}"
                                                     target="_blank"
                                                     rel="noopener noreferrer">
-                                                    ATT&CK v{{ viewModel.version }}
+                                                    {{ 'ATT&CK v' | tr }}{{ viewModel.version }}
                                                 </a>
                                             </div>
                                             <mat-divider></mat-divider>
@@ -128,9 +128,11 @@
                                             <mat-icon
                                                 class="info"
                                                 matTooltipPosition="above"
-                                                matTooltip="Drag and drop to copy annotations to the desired tactics in ATT&CK v{{
-                                                    viewModel.version
-                                                }}.">
+                                                [matTooltip]="
+                                                    ('Drag and drop to copy annotations to the desired tactics in ATT&CK v' | tr) +
+                                                    viewModel.version +
+                                                    '.'
+                                                ">
                                                 info_outline
                                             </mat-icon>
                                         </div>
@@ -152,7 +154,7 @@
                                                     class="clear-annotations"
                                                     *ngIf="isAnnotated(newTechnique, tactic, viewModel)"
                                                     matTooltipPosition="above"
-                                                    matTooltip="clear annotations"
+                                                    [matTooltip]="'clear annotations' | tr"
                                                     (click)="clearAnnotations(newTechnique, tactic)">
                                                     x
                                                 </span>
@@ -175,7 +177,7 @@
                                                     <button
                                                         class="button"
                                                         matTooltipPosition="above"
-                                                        matTooltip="copy annotations"
+                                                        [matTooltip]="'copy annotations' | tr"
                                                         [disabled]="isCopied(getTechnique(attackID, compareTo), tactic) || !anyAnnotated(attackID)"
                                                         (click)="copyAnnotations(attackID, tactic, section)">
                                                         <mat-icon inline="true">chevron_right</mat-icon>
@@ -183,7 +185,7 @@
                                                     <button
                                                         class="button"
                                                         matTooltipPosition="above"
-                                                        matTooltip="revert copy"
+                                                        [matTooltip]="'revert copy' | tr"
                                                         [disabled]="!isCopied(getTechnique(attackID, compareTo), tactic)"
                                                         (click)="revertCopy(attackID, tactic, section)">
                                                         <mat-icon inline="true">chevron_left</mat-icon>
@@ -208,7 +210,7 @@
                                             type="checkbox"
                                             [checked]="isReviewed(attackID)"
                                             (click)="reviewedChanged(attackID, panel)" />
-                                        <label for="review_{{ attackID }}" class="checkbox-custom-label noselect">reviewed</label>
+                                        <label for="review_{{ attackID }}" class="checkbox-custom-label noselect">{{ 'reviewed' | tr }}</label>
                                     </div>
                                 </ng-template>
                             </mat-expansion-panel>
@@ -219,20 +221,20 @@
             </div>
 
             <div *ngIf="changelog[section].length == 0 && !loading">
-                <div class="description center">No objects to show</div>
+                <div class="description center">{{ 'No objects to show' | tr }}</div>
             </div>
             <mat-divider></mat-divider>
             <div class="stepper-button">
-                <span *ngIf="changelog[section].length > 0">Reviewed {{ countReviewed(section) }}/{{ sectionLength(section) }} techniques</span>
-                <button *ngIf="section !== 'additions'" mat-stroked-button matStepperPrevious (click)="onStepChange(section, -1)">Back</button>
+                <span *ngIf="changelog[section].length > 0">{{ 'Reviewed' | tr }} {{ countReviewed(section) }}/{{ sectionLength(section) }} {{ 'techniques' | tr }}</span>
+                <button *ngIf="section !== 'additions'" mat-stroked-button matStepperPrevious (click)="onStepChange(section, -1)">{{ 'Back' | tr }}</button>
                 <button mat-stroked-button matStepperNext (click)="onStepChange(section, 1)">
-                    {{ countReviewed(section) > 0 ? 'Next' : 'Skip' }}
+                    {{ countReviewed(section) > 0 ? ('Next' | tr) : ('Skip' | tr) }}
                 </button>
             </div>
         </mat-step>
 
         <mat-step>
-            <ng-template matStepLabel>Finish</ng-template>
+            <ng-template matStepLabel>{{ 'Finish' | tr }}</ng-template>
 
             <div class="description">
                 <span>{{ getDescription('finish') }}</span>
@@ -240,21 +242,21 @@
 
             <mat-divider></mat-divider>
 
-            <h4>Overview</h4>
+            <h4>{{ 'Overview' | tr }}</h4>
             <div class="summary" *ngFor="let section of sections">
                 <span>{{ getHeader(section) }}:&nbsp;</span>
                 <span *ngIf="countReviewed(section) > 0">
-                    Reviewed {{ countReviewed(section) }}/{{ sectionLength(section) }} {{ filter[section] ? 'annotated' : '' }} techniques
+                    {{ 'Reviewed' | tr }} {{ countReviewed(section) }}/{{ sectionLength(section) }} {{ filter[section] ? ('annotated' | tr) : '' }} {{ 'techniques' | tr }}
                 </span>
-                <span *ngIf="!changelog[section].length">No objects to review</span>
-                <span *ngIf="changelog[section].length && countReviewed(section) == 0">Skipped</span>
+                <span *ngIf="!changelog[section].length">{{ 'No objects to review' | tr }}</span>
+                <span *ngIf="changelog[section].length && countReviewed(section) == 0">{{ 'Skipped' | tr }}</span>
             </div>
 
             <mat-divider></mat-divider>
 
             <div class="stepper-button">
-                <button mat-stroked-button matStepperPrevious>Back</button>
-                <button mat-stroked-button (click)="closeSidebar()">Done</button>
+                <button mat-stroked-button matStepperPrevious>{{ 'Back' | tr }}</button>
+                <button mat-stroked-button (click)="closeSidebar()">{{ 'Done' | tr }}</button>
             </div>
         </mat-step>
     </mat-vertical-stepper>

@@ -8,13 +8,14 @@ import { FormsModule } from '@angular/forms';
 import { MatDivider } from '@angular/material/divider';
 import { ListInputComponent } from '../list-input/list-input.component';
 import { MatButton } from '@angular/material/button';
+import { TrPipe } from '../utils/tr.pipe';
 
 @Component({
     selector: 'app-layer-settings',
     templateUrl: './layer-settings.component.html',
     styleUrls: ['./layer-settings.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    imports: [MatCard, MatCardTitle, MatCardContent, MatFormField, MatLabel, MatInput, FormsModule, MatDivider, ListInputComponent, MatButton],
+    imports: [MatCard, MatCardTitle, MatCardContent, MatFormField, MatLabel, MatInput, FormsModule, MatDivider, ListInputComponent, MatButton, TrPipe],
 })
 export class LayerSettingsComponent {
     @Input() viewModel: ViewModel;

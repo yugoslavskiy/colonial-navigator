@@ -32,6 +32,7 @@ import { FormsModule } from '@angular/forms';
 import { MatInput } from '@angular/material/input';
 import { MatCheckbox } from '@angular/material/checkbox';
 import { DataTableComponent } from '../datatable/data-table.component';
+import { TrPipe } from '../utils/tr.pipe';
 
 @Component({
     selector: 'tabs',
@@ -69,6 +70,7 @@ import { DataTableComponent } from '../datatable/data-table.component';
         MatSuffix,
         MatCheckbox,
         DataTableComponent,
+        TrPipe,
     ],
 })
 export class TabsComponent implements AfterViewInit {
