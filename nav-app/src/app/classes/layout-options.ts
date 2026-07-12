@@ -1,7 +1,8 @@
 export class LayoutOptions {
     // current layout selection
     public readonly layoutOptions: string[] = ['side', 'flat', 'mini'];
-    private _layout = this.layoutOptions[0];
+    // дефолт — flat (как на матрицах сайта); слой с явным полем layout его перекрывает
+    private _layout = 'flat';
     public set layout(newLayout) {
         if (!this.layoutOptions.includes(newLayout)) {
             console.warn('invalid matrix layout', newLayout);
