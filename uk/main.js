@@ -118560,7 +118560,7 @@ var Filter = class {
 var LayoutOptions = class {
   constructor() {
     this.layoutOptions = ["side", "flat", "mini"];
-    this._layout = this.layoutOptions[0];
+    this._layout = "flat";
     this.aggregateFunctionOptions = ["average", "min", "max", "sum"];
     this._aggregateFunction = this.aggregateFunctionOptions[0];
     this._showID = false;
