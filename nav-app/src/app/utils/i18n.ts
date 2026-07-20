@@ -30,6 +30,10 @@ export const I18N: { [en: string]: { ru?: string; uk?: string } } = {
     'Links': { ru: 'Ссылки', uk: 'Посилання' },
     'Matrix Layout': { ru: 'Компоновка матрицы', uk: 'Компонування матриці' },
     'layout': { ru: 'компоновка', uk: 'компонування' },
+    // радио выбора компоновки: en остаётся "side/flat/mini layout" (фолбэк по ключу)
+    'side layout': { ru: 'сбоку', uk: 'збоку' },
+    'flat layout': { ru: 'списком', uk: 'списком' },
+    'mini layout': { ru: 'мини', uk: 'міні' },
     'Labels': { ru: 'Подписи', uk: 'Підписи' },
     'show IDs': { ru: 'показывать ID', uk: 'показувати ID' },
     'show names': { ru: 'показывать названия', uk: 'показувати назви' },

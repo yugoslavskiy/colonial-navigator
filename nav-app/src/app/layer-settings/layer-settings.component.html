@@ -95,7 +95,7 @@
                     @for (option of viewModel.layout.layoutOptions; track option) {
                         <div>
                             <input type="radio" [value]="option" [(ngModel)]="viewModel.layout.layout" [name]="option" />
-                            {{ option }} {{ 'layout' | tr }}
+                            {{ (option + ' layout') | tr }}
                         </div>
                     }
                 </mat-card-content>
