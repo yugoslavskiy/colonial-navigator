@@ -165979,6 +165979,10 @@ var I18N = {
   "Links": { ru: "\u0421\u0441\u044B\u043B\u043A\u0438", uk: "\u041F\u043E\u0441\u0438\u043B\u0430\u043D\u043D\u044F" },
   "Matrix Layout": { ru: "\u041A\u043E\u043C\u043F\u043E\u043D\u043E\u0432\u043A\u0430 \u043C\u0430\u0442\u0440\u0438\u0446\u044B", uk: "\u041A\u043E\u043C\u043F\u043E\u043D\u0443\u0432\u0430\u043D\u043D\u044F \u043C\u0430\u0442\u0440\u0438\u0446\u0456" },
   "layout": { ru: "\u043A\u043E\u043C\u043F\u043E\u043D\u043E\u0432\u043A\u0430", uk: "\u043A\u043E\u043C\u043F\u043E\u043D\u0443\u0432\u0430\u043D\u043D\u044F" },
+  // радио выбора компоновки: en остаётся "side/flat/mini layout" (фолбэк по ключу)
+  "side layout": { ru: "\u0441\u0431\u043E\u043A\u0443", uk: "\u0437\u0431\u043E\u043A\u0443" },
+  "flat layout": { ru: "\u0441\u043F\u0438\u0441\u043A\u043E\u043C", uk: "\u0441\u043F\u0438\u0441\u043A\u043E\u043C" },
+  "mini layout": { ru: "\u043C\u0438\u043D\u0438", uk: "\u043C\u0456\u043D\u0456" },
   "Labels": { ru: "\u041F\u043E\u0434\u043F\u0438\u0441\u0438", uk: "\u041F\u0456\u0434\u043F\u0438\u0441\u0438" },
   "show IDs": { ru: "\u043F\u043E\u043A\u0430\u0437\u044B\u0432\u0430\u0442\u044C ID", uk: "\u043F\u043E\u043A\u0430\u0437\u0443\u0432\u0430\u0442\u0438 ID" },
   "show names": { ru: "\u043F\u043E\u043A\u0430\u0437\u044B\u0432\u0430\u0442\u044C \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F", uk: "\u043F\u043E\u043A\u0430\u0437\u0443\u0432\u0430\u0442\u0438 \u043D\u0430\u0437\u0432\u0438" },
@@ -173900,7 +173904,7 @@ function LayerSettingsComponent_For_64_Template(rf, ctx) {
     \u0275\u0275twoWayProperty("ngModel", ctx_r1.viewModel.layout.layout);
     \u0275\u0275property("name", option_r3);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate2(" ", option_r3, " ", \u0275\u0275pipeBind1(3, 5, "layout"), " ");
+    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind1(3, 4, option_r3 + " layout"), " ");
   }
 }
 function LayerSettingsComponent_For_106_Template(rf, ctx) {
@@ -174005,7 +174009,7 @@ var LayerSettingsComponent = class _LayerSettingsComponent {
         \u0275\u0275pipe(61, "tr");
         \u0275\u0275elementEnd()();
         \u0275\u0275elementStart(62, "mat-card-content");
-        \u0275\u0275repeaterCreate(63, LayerSettingsComponent_For_64_Template, 4, 7, "div", null, \u0275\u0275repeaterTrackByIdentity);
+        \u0275\u0275repeaterCreate(63, LayerSettingsComponent_For_64_Template, 4, 6, "div", null, \u0275\u0275repeaterTrackByIdentity);
         \u0275\u0275elementEnd()()();
         \u0275\u0275elementStart(65, "mat-card")(66, "div", 2)(67, "mat-card-title")(68, "h4", 3);
         \u0275\u0275text(69);
@@ -174241,7 +174245,7 @@ var LayerSettingsComponent = class _LayerSettingsComponent {
                     @for (option of viewModel.layout.layoutOptions; track option) {
                         <div>
                             <input type="radio" [value]="option" [(ngModel)]="viewModel.layout.layout" [name]="option" />
-                            {{ option }} {{ 'layout' | tr }}
+                            {{ (option + ' layout') | tr }}
                         </div>
                     }
                 </mat-card-content>
